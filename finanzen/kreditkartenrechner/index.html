@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Kreditkartenrechner – Kostenlos vergleichen | CleverSparen</title>
+  <meta name="description" content="Beste Kreditkarte mit Cashback finden. Kostenlos, unverbindlich und in 2 Minuten. Bis zu 100€ Startbonus."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #0d6e4f;
+      --green-mid: #16a068;
+      --green-light: #e8f7f1;
+      --green-pale: #f3fbf8;
+      --orange: #f46b2b;
+      --orange-dark: #d9561e;
+      --txt: #111827;
+      --txt-mid: #374151;
+      --txt-muted: #6b7280;
+      --border: #e5e7eb;
+      --white: #ffffff;
+      --grey: #f9fafb;
+      --r: 12px;
+      --shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--txt); background: var(--white); line-height: 1.6; font-size: 16px; }
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--border);
+      padding: 0 1.25rem; display: flex; align-items: center; justify-content: space-between; height: 60px;
+    }
+    .logo { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 900; color: var(--green); text-decoration: none; }
+    .logo span { color: var(--orange); }
+    .nav-right { display: flex; align-items: center; gap: 1rem; }
+    .nav-links { display: flex; gap: 1.25rem; list-style: none; }
+    .nav-links a { font-size: 0.88rem; font-weight: 600; color: var(--txt-mid); text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { background: var(--orange); color: var(--white); font-size: 0.85rem; font-weight: 700; padding: 0.5rem 1.1rem; border-radius: 50px; text-decoration: none; }
+    .nav-cta:hover { background: var(--orange-dark); }
+    @media(max-width:600px){ .nav-links { display: none; } }
+    .section { padding: 3rem 1.25rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .lbl { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-mid); margin-bottom: 0.4rem; }
+    .h2 { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.6rem; }
+    .sub { font-size: 0.95rem; color: var(--txt-muted); max-width: 540px; margin-bottom: 2rem; }
+    footer { background: #111827; color: rgba(255,255,255,0.45); padding: 2rem 1.25rem; text-align: center; font-size: 0.8rem; }
+    footer a { color: rgba(255,255,255,0.45); text-decoration: none; }
+    footer a:hover { color: #fff; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 0.5rem; }
+    .sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--white); border-top: 1px solid var(--border); padding: 0.75rem 1.25rem; }
+    .sticky-cta a { display: block; background: var(--orange); color: var(--white); font-size: 1rem; font-weight: 700; padding: 0.85rem; border-radius: 50px; text-decoration: none; text-align: center; }
+    @media(max-width:640px){ .sticky-cta { display: block; } body { padding-bottom: 76px; } }
+    .btn { display: inline-block; background: var(--orange); color: var(--white); font-size: 1rem; font-weight: 700; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; transition: background 0.2s, transform 0.15s; box-shadow: 0 4px 18px rgba(244,107,43,0.35); }
+    .btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .btn-sm { font-size: 0.88rem; padding: 0.65rem 1.3rem; }
+    .btn-outline { background: transparent; border: 2px solid var(--green); color: var(--green); box-shadow: none; }
+    .btn-outline:hover { background: var(--green); color: var(--white); }
+
+    .hero { background:linear-gradient(160deg,var(--green) 0%,#0a5940 100%); color:var(--white); padding:2.5rem 1.25rem 2rem; }
+    .breadcrumb { font-size:0.8rem; color:rgba(255,255,255,0.55); margin-bottom:0.75rem; }
+    .breadcrumb a { color:rgba(255,255,255,0.7); text-decoration:none; }
+    .breadcrumb a:hover { color:var(--white); }
+    .hero h1 { font-family:'Fraunces',serif; font-size:clamp(1.6rem,4vw,2.4rem); font-weight:900; line-height:1.15; margin-bottom:0.7rem; }
+    .hero h1 em { color:#6ee7b7; font-style:normal; }
+    .rechner-wrap { background:var(--grey); border-radius:var(--r); padding:1.5rem 1rem; }
+    .related-grid { display:flex; flex-direction:column; gap:0.6rem; }
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Clever<span>Sparen</span></a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="/finanzen">Finanzen</a></li>
+      <li><a href="/versicherungen">Versicherungen</a></li>
+      <li><a href="/kredite">Kredite</a></li>
+    </ul>
+    <a href="/" class="nav-cta">Alle Rechner →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="section-inner">
+    <p class="breadcrumb"><a href="/">Startseite</a> › <a href="/finanzen">Finanzen & Sparen</a> › Kreditkartenrechner</p>
+    <p style="display:inline-block;background:rgba(255,255,255,0.13);color:#a7f3d0;font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;padding:0.25rem 0.8rem;border-radius:50px;margin-bottom:0.9rem;">💳 Finanzen & Sparen</p>
+    <h1>Kreditkartenrechner – <em>kostenlos vergleichen</em></h1>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.8);max-width:520px;margin-bottom:1.25rem;">Beste Kreditkarte mit Cashback finden. Bis zu 100€ Startbonus.</p>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;align-items:center;">
+      <a href="#rechner" class="btn btn-sm">Jetzt vergleichen →</a>
+      <span style="font-size:0.82rem;color:rgba(255,255,255,0.55);">✓ Kostenlos &nbsp;·&nbsp; ✓ Unverbindlich</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="rechner">
+  <div class="section-inner">
+    <div class="rechner-wrap">
+      <div id="rechner" style="margin-top:1rem;">
+  <iframe onload="fa_iframeresize.do(this);"
+    src="https://tools.financeads.net/kreditkartenrechner.php?tp=dif&wf=82026&ntpl=responsive&h=1"
+    scrolling="no" width="650" height="890"
+    style="width:100%;padding:0;margin:0;border:none;"
+    frameborder="0"></iframe>
+  <script type="text/javascript" src="//js.financeads.net/iframeResizeMe.min.js.gz"></script>
+</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--grey);padding-top:0;">
+  <div class="section-inner">
+    <p class="lbl">Weitere Rechner</p>
+    <h2 class="h2" style="font-size:1.3rem;margin-bottom:1rem;">Weitere Finanzen & Sparen-Rechner</h2>
+    <div class="related-grid"><a href="/finanzen/baufinanzierungrechner" style="display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--txt);font-size:0.88rem;font-weight:600;transition:border-color 0.18s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'"><span style="font-size:1.1rem;">🏠</span> Baufinanzierungsrechner</a><a href="/finanzen/bausparrechner" style="display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--txt);font-size:0.88rem;font-weight:600;transition:border-color 0.18s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'"><span style="font-size:1.1rem;">🏗️</span> Bausparrechner</a><a href="/finanzen/crowdinvestingrechner" style="display:flex;align-items:center;gap:0.6rem;padding:0.75rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--txt);font-size:0.88rem;font-weight:600;transition:border-color 0.18s;" onmouseover="this.style.borderColor='var(--green)'" onmouseout="this.style.borderColor='var(--border)'"><span style="font-size:1.1rem;">📈</span> Crowdinvesting Rechner</a></div>
+    <div style="margin-top:1.25rem;">
+      <a href="/finanzen" class="btn btn-outline btn-sm">Alle Finanzen & Sparen-Rechner ansehen →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 CleverSparen · Alle Angaben ohne Gewähr · Affiliate-Links</p>
+  <div class="footer-links">
+    <a href="/impressum">Impressum</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="/cookies">Cookies</a>
+    <a href="/">Startseite</a>
+  </div>
+</footer>
+<div class="sticky-cta"><a href="#rechner">Jetzt Kreditkartenrechner →</a></div>
+
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111827;color:rgba(255,255,255,0.85);padding:1rem 1.25rem;border-top:3px solid #0d6e4f;">
+  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.75rem;">
+    <p style="font-size:0.85rem;margin:0;flex:1;min-width:220px;">
+      Wir verwenden Cookies, um dein Erlebnis zu verbessern.
+      <a href="/cookies" style="color:#6ee7b7;text-decoration:underline;">Mehr erfahren</a>
+    </p>
+    <div style="display:flex;gap:0.6rem;flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#0d6e4f;color:#fff;border:none;padding:0.55rem 1.2rem;border-radius:50px;font-size:0.85rem;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;">Akzeptieren</button>
+      <button onclick="declineCookies()" style="background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.2);padding:0.55rem 1.1rem;border-radius:50px;font-size:0.85rem;cursor:pointer;font-family:'DM Sans',sans-serif;">Ablehnen</button>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var consent = localStorage.getItem('cs_cookie_consent');
+  if (!consent) document.getElementById('cookie-banner').style.display = 'block';
+})();
+function acceptCookies() {
+  localStorage.setItem('cs_cookie_consent', 'accepted');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+function declineCookies() {
+  localStorage.setItem('cs_cookie_consent', 'declined');
+  document.getElementById('cookie-banner').style.display = 'none';
+}
+</script>
+
+</body>
+</html>
