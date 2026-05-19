@@ -211,7 +211,17 @@ function handleEmail(e) {
   e.preventDefault();
   var i = document.querySelector('.email-input');
   if (!i.value.includes('@')) { i.style.outline='2px solid var(--orange)'; return; }
-  i.value=''; i.placeholder='✓ Danke! Du bist dabei.';
+  var email = i.value;
+  fetch('https://formspree.io/f/xeedobjz', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+    body: JSON.stringify({email: email, page: window.location.pathname})
+  })
+  .then(function(r) {
+    if (r.ok) { i.value=''; i.placeholder='✓ Danke! Du bist dabei.'; i.style.outline=''; }
+    else { i.placeholder='Fehler – bitte erneut versuchen.'; }
+  })
+  .catch(function() { i.placeholder='Fehler – bitte erneut versuchen.'; });
 }
 </script>
 
