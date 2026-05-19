@@ -71,6 +71,17 @@
     .quick-btn { display:inline-flex; align-items:center; gap:0.4rem; background:var(--green-light); color:var(--green); font-size:0.88rem; font-weight:600; padding:0.6rem 1.1rem; border-radius:50px; text-decoration:none; border:1.5px solid rgba(13,110,79,0.15); transition:all 0.18s; }
     .quick-btn:hover { background:var(--green); color:var(--white); transform:translateY(-1px); }
     .cat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.25rem; }
+    .cat-card { background:var(--white); border:1.5px solid var(--border); border-radius:var(--r); padding:1.5rem; display:flex; flex-direction:column; gap:0.6rem; transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s; cursor:pointer; }
+    .cat-card:hover { border-color:var(--green-mid); box-shadow:0 4px 28px rgba(0,0,0,0.1); transform:translateY(-2px); }
+    .cat-card-icon { font-size:1.8rem; margin-bottom:0.1rem; }
+    .cat-card h3 { font-size:1.05rem; font-weight:700; color:var(--txt); }
+    .cat-card-count { font-size:0.85rem; color:var(--txt-muted); }
+    .cat-card-badge { font-size:0.8rem; font-weight:700; color:var(--green); background:var(--green-light); display:inline-block; padding:0.2rem 0.6rem; border-radius:50px; align-self:flex-start; }
+    .cat-card-list { list-style:none; padding:0; margin:0.4rem 0 0; display:flex; flex-direction:column; }
+    .cat-card-list li { font-size:0.82rem; color:var(--txt-muted); padding:0.3rem 0; border-bottom:1px solid var(--border); }
+    .cat-card-list li:last-child { border-bottom:none; }
+    .cat-card-more { font-size:0.78rem; color:var(--txt-muted); margin-top:0.3rem; }
+    .cat-card-cta { font-size:0.88rem; font-weight:700; color:var(--green); margin-top:auto; padding-top:0.5rem; }
     .trust-items { display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; padding:1.5rem 1.25rem; background:var(--green-pale); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
     .trust-item { display:flex; align-items:center; gap:0.5rem; font-size:0.88rem; font-weight:600; color:var(--green); }
     .trust-check { width:1.5rem; height:1.5rem; background:var(--green); border-radius:50%; color:var(--white); display:flex; align-items:center; justify-content:center; font-size:0.7rem; flex-shrink:0; }
@@ -115,33 +126,53 @@
     <h2 class="h2">Was möchtest du vergleichen?</h2>
     <p class="sub">Wähle eine Kategorie und nutze unsere kostenlosen Vergleichsrechner.</p>
     <div class="cat-grid">
-      <a href="/finanzen" style="display:flex;flex-direction:column;gap:0.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;text-decoration:none;color:var(--txt);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;" onmouseover="this.style.borderColor='var(--green-mid)';this.style.boxShadow='0 4px 28px rgba(0,0,0,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
-        <div style="font-size:1.8rem;margin-bottom:0.25rem;">💶</div>
-        <h3 style="font-size:1.05rem;font-weight:700;">Finanzen & Sparen</h3>
-        <p style="font-size:0.85rem;color:var(--txt-muted);">12 Vergleichsrechner</p>
-        <span style="font-size:0.8rem;font-weight:700;color:var(--green);background:var(--green-light);display:inline-block;padding:0.2rem 0.6rem;border-radius:50px;">Bis zu 250€/Jahr</span>
-        <ul style="list-style:none;padding:0;margin:0.5rem 0 0;"><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/finanzen/baufinanzierungrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Hypothek & Baufinanzierung vergleichen</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/finanzen/bausparrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Bausparvertrag optimal wählen</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/finanzen/crowdinvestingrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Rendite bei Crowdinvesting berechnen</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/finanzen/depotrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Depot & ETF-Broker vergleichen</a></li></ul>
-        <p style="font-size:0.78rem;color:var(--txt-muted);margin-top:0.4rem;">+ 8 weitere Rechner</p>
-        <span style="font-size:0.88rem;font-weight:700;color:var(--green);margin-top:auto;">Alle Rechner ansehen →</span>
-      </a>
-      <a href="/versicherungen" style="display:flex;flex-direction:column;gap:0.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;text-decoration:none;color:var(--txt);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;" onmouseover="this.style.borderColor='var(--green-mid)';this.style.boxShadow='0 4px 28px rgba(0,0,0,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
-        <div style="font-size:1.8rem;margin-bottom:0.25rem;">🛡️</div>
-        <h3 style="font-size:1.05rem;font-weight:700;">Versicherungen</h3>
-        <p style="font-size:0.85rem;color:var(--txt-muted);">10 Vergleichsrechner</p>
-        <span style="font-size:0.8rem;font-weight:700;color:var(--green);background:var(--green-light);display:inline-block;padding:0.2rem 0.6rem;border-radius:50px;">Bis zu 300€/Jahr</span>
-        <ul style="list-style:none;padding:0;margin:0.5rem 0 0;"><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/versicherungen/auslandskrankenversicherungsrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Reisekrankenversicherung ab 10€/Jahr</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/versicherungen/geraeteversicherungsrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Handy & Elektronik versichern</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/versicherungen/hausratrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Hausrat günstig & vollständig versichern</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/versicherungen/hundehaftpflichtrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Günstige Hundehaftpflicht finden</a></li></ul>
-        <p style="font-size:0.78rem;color:var(--txt-muted);margin-top:0.4rem;">+ 6 weitere Rechner</p>
-        <span style="font-size:0.88rem;font-weight:700;color:var(--green);margin-top:auto;">Alle Rechner ansehen →</span>
-      </a>
-      <a href="/kredite" style="display:flex;flex-direction:column;gap:0.6rem;background:var(--white);border:1.5px solid var(--border);border-radius:var(--r);padding:1.5rem;text-decoration:none;color:var(--txt);transition:border-color 0.2s,box-shadow 0.2s,transform 0.15s;" onmouseover="this.style.borderColor='var(--green-mid)';this.style.boxShadow='0 4px 28px rgba(0,0,0,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
-        <div style="font-size:1.8rem;margin-bottom:0.25rem;">🏦</div>
-        <h3 style="font-size:1.05rem;font-weight:700;">Kredite & Darlehen</h3>
-        <p style="font-size:0.85rem;color:var(--txt-muted);">5 Vergleichsrechner</p>
-        <span style="font-size:0.8rem;font-weight:700;color:var(--green);background:var(--green-light);display:inline-block;padding:0.2rem 0.6rem;border-radius:50px;">Tausende € Zinsen sparen</span>
-        <ul style="list-style:none;padding:0;margin:0.5rem 0 0;"><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/kredite/autokreditrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Autofinanzierung zum besten Zinssatz</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/kredite/forwarddarlehenrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Anschlussfinanzierung jetzt sichern</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/kredite/mietkautionsrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Mietkaution ohne Barzahlung lösen</a></li><li style="font-size:0.82rem;color:var(--txt-muted);padding:0.3rem 0;border-bottom:1px solid var(--border);"><a href="/kredite/minikreditrechner" style="color:var(--txt-mid);text-decoration:none;font-weight:500;">Schnellkredit bis 3.000€</a></li></ul>
-        <p style="font-size:0.78rem;color:var(--txt-muted);margin-top:0.4rem;">+ 1 weitere Rechner</p>
-        <span style="font-size:0.88rem;font-weight:700;color:var(--green);margin-top:auto;">Alle Rechner ansehen →</span>
-      </a></div>
+
+      <div class="cat-card" onclick="location.href='/finanzen'">
+        <div class="cat-card-icon">💶</div>
+        <h3>Finanzen & Sparen</h3>
+        <p class="cat-card-count">12 Vergleichsrechner</p>
+        <span class="cat-card-badge">Bis zu 250€/Jahr</span>
+        <ul class="cat-card-list">
+          <li>Hypothek & Baufinanzierung vergleichen</li>
+          <li>Bausparvertrag optimal wählen</li>
+          <li>Rendite bei Crowdinvesting berechnen</li>
+          <li>Depot & ETF-Broker vergleichen</li>
+        </ul>
+        <p class="cat-card-more">+ 8 weitere Rechner</p>
+        <span class="cat-card-cta">Alle Rechner ansehen →</span>
+      </div>
+
+      <div class="cat-card" onclick="location.href='/versicherungen'">
+        <div class="cat-card-icon">🛡️</div>
+        <h3>Versicherungen</h3>
+        <p class="cat-card-count">10 Vergleichsrechner</p>
+        <span class="cat-card-badge">Bis zu 300€/Jahr</span>
+        <ul class="cat-card-list">
+          <li>Reisekrankenversicherung ab 10€/Jahr</li>
+          <li>Handy & Elektronik versichern</li>
+          <li>Hausrat günstig & vollständig versichern</li>
+          <li>Günstige Hundehaftpflicht finden</li>
+        </ul>
+        <p class="cat-card-more">+ 6 weitere Rechner</p>
+        <span class="cat-card-cta">Alle Rechner ansehen →</span>
+      </div>
+
+      <div class="cat-card" onclick="location.href='/kredite'">
+        <div class="cat-card-icon">🏦</div>
+        <h3>Kredite & Darlehen</h3>
+        <p class="cat-card-count">5 Vergleichsrechner</p>
+        <span class="cat-card-badge">Tausende € Zinsen sparen</span>
+        <ul class="cat-card-list">
+          <li>Autofinanzierung zum besten Zinssatz</li>
+          <li>Anschlussfinanzierung jetzt sichern</li>
+          <li>Mietkaution ohne Barzahlung lösen</li>
+          <li>Schnellkredit bis 3.000€</li>
+        </ul>
+        <p class="cat-card-more">+ 1 weiterer Rechner</p>
+        <span class="cat-card-cta">Alle Rechner ansehen →</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
