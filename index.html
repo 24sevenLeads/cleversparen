@@ -212,7 +212,7 @@ function handleEmail(e) {
   var i = document.querySelector('.email-input');
   if (!i.value.includes('@')) { i.style.outline='2px solid var(--orange)'; return; }
   var email = i.value;
-  fetch('https://formspree.io/f/xeedobjz', {
+  fetch('https://formspree.io/f/xeedobaz', {
     method: 'POST',
     headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify({email: email, page: window.location.pathname})
